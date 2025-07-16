@@ -2,6 +2,150 @@
 <html lang="en" translate="no">
   <head>
     <!-- customize head -->
+        <!--引入字体，全局字体使用-->
+<link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/lxgwwenkai-regular.css" />
+
+<style>
+  /* 去除通知栏 右上角 X */
+  .notify-render .hope-close-button {
+    display: none;
+  }
+  /*去掉底部*/
+  .footer {
+    display: none !important;
+  }
+
+      /*白天背景图*/
+  .hope-ui-light {
+    background-image: url("https://file.51pptmoban.com/d/file/2025/06/14/4ab1e5946a02cfb1dfe45aa4710e60a3.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+  }
+  /*夜间背景图*/
+  .hope-ui-dark {
+    background-image: url("https://file.51pptmoban.com/d/file/2019/03/24/7efdfac3e1d6125d9c8893cb45985466.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+  }
+    
+    /*主列表白天模式透明*/
+    .obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-igScBhH-css {
+        backdrop-filter: blur(10px); /* 毛玻璃效果的强度 */
+        -webkit-backdrop-filter: blur(10px); /* 为 Safari 浏览器添加兼容性 */
+        background-color: rgba(190, 190, 190, 0.3) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    }
+    /*主列表夜间模式透明*/
+    .obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-iigjoxS-css {
+        backdrop-filter: blur(10px); /* 毛玻璃效果的强度 */
+        -webkit-backdrop-filter: blur(10px); /* 为 Safari 浏览器添加兼容性 */
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    }
+    /*readme白天模式透明*/
+    .hope-c-PJLV.hope-c-PJLV-ikSuVsl-css {
+        backdrop-filter: blur(10px); /* 毛玻璃效果的强度 */
+        -webkit-backdrop-filter: blur(10px); /* 为 Safari 浏览器添加兼容性 */
+        background-color: rgba(190, 190, 190, 0.3) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    }
+    /*readme夜间模式透明*/
+    .hope-c-PJLV.hope-c-PJLV-iiuDLME-css {
+        backdrop-filter: blur(10px); /* 毛玻璃效果的强度 */
+        -webkit-backdrop-filter: blur(10px); /* 为 Safari 浏览器添加兼容性 */
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    }
+
+  /*左侧侧边栏目录*/
+  /*白天模式*/
+  .hope-ui-light .hope-c-PJLV-ieGWMbI-css {
+    background: rgba(190, 190, 190, 0.3) !important;
+  }
+  /*夜间模式*/
+  .hope-ui-dark .hope-c-PJLV-ieGWMbI-css {
+    background-color: rgb(0 0 0 / 30%) !important;
+  }
+  /* 返回顶部 */
+  .hope-c-PJLV-ihVEsOa-css {
+    background: rgba(190, 190, 190, 0.3) !important;
+  }
+  .hope-ui-dark .hope-c-PJLV-ihVEsOa-css {
+    background-color: rgb(0 0 0 / 30%) !important;
+  }
+
+
+  /*顶部*/
+  #root > .header {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  
+    /*导航条*/
+    /*白天模式*/
+    .hope-ui-light .body > .nav {
+        background-color: rgba(190, 190, 190, 0.3);
+        border-radius: var(--hope-radii-xl);
+    }
+    /*夜间模式*/
+    .hope-ui-dark .body > .nav {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: var(--hope-radii-xl);
+    }
+   
+    /*隐藏导航条遮罩*/
+    .body > .nav::after {
+        display: none;
+    }
+
+/*白天模式 搜索主体+毛玻璃*/
+.hope-ui-light .hope-c-PJLV-iiBaxsN-css{
+   background-color: rgba(190, 190, 190, 0.3)!important;
+   backdrop-filter: blur(10px)!important;
+}
+
+/*白天模式 搜索栏输入框+毛玻璃*/
+.hope-ui-light .hope-c-kvTTWD-hYRNAb-variant-filled{
+   background-color: rgba(190, 190, 190, 0.3)!important;
+   backdrop-filter: blur(10px)!important;
+}
+
+/*白天模式 搜索按钮+毛玻璃*/
+.hope-ui-light .hope-c-PJLV-ikEIIxw-css{
+   background-color: rgba(190, 190, 190, 0.3)!important;
+   backdrop-filter: blur(10px)!important;
+   padding: var(--hope-space-1)!important;
+}
+
+/*夜间模式搜索主体+毛玻璃*/
+.hope-ui-dark .hope-c-PJLV-iiBaxsN-css{
+    background-color: rgb(0 0 0 / 10%)!important;
+    backdrop-filter: blur(10px)!important;
+}
+
+/*夜间模式搜索栏+毛玻璃*/
+.hope-ui-dark .hope-c-kvTTWD-hYRNAb-variant-filled{
+    background-color: rgb(0 0 0 / 10%)!important;
+    backdrop-filter: blur(10px)!important;
+}
+
+/*夜间模式 搜索按钮+毛玻璃*/
+.hope-ui-dark .hope-c-PJLV-ikEIIxw-css{
+    background-color: rgb(0 0 0 / 10%)!important;
+    backdrop-filter: blur(10px)!important;
+    padding: var(--hope-space-1)!important;
+}
+    
+ /*全局字体*/
+ *{font-family:LXGW WenKai}
+ *{font-weight:bold}
+ body {font-family: LXGW WenKai;}
+ 
+</style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="referrer" content="same-origin" />
