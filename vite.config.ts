@@ -1,4 +1,5 @@
 import path from "path"
+import copy from 'rollup-plugin-copy'
 import { defineConfig } from "vite"
 import solidPlugin from "vite-plugin-solid"
 import legacy from "@vitejs/plugin-legacy"
