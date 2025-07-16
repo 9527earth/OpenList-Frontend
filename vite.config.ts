@@ -1,5 +1,4 @@
 import path from "path"
-import copy from 'rollup-plugin-copy'
 import { defineConfig } from "vite"
 import solidPlugin from "vite-plugin-solid"
 import legacy from "@vitejs/plugin-legacy"
@@ -17,12 +16,6 @@ export default defineConfig({
     solidPlugin(),
     legacy({
       targets: ["defaults"],
-    }),
-    copy({
-      targets: [
-        { src: 'src/lang', dest: 'dist' }  // 复制 src/lang 到 dist/lang
-      ],
-      hook: 'writeBundle'
     }),
     dynamicBase({
       // dynamic public path var string, default window.__dynamic_base__
