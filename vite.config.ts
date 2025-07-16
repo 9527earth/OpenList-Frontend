@@ -17,6 +17,12 @@ export default defineConfig({
     legacy({
       targets: ["defaults"],
     }),
+    copy({
+      targets: [
+        { src: 'src/lang', dest: 'dist' }  // 复制 src/lang 到 dist/lang
+      ],
+      hook: 'writeBundle'
+    }),
     dynamicBase({
       // dynamic public path var string, default window.__dynamic_base__
       publicPath: " window.__dynamic_base__",
