@@ -2,12 +2,5 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "OpenList",
-  "icons": [
-    {
-      "src": "https://docs.oplist.org/logo.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "name": "OpenList"
 }
