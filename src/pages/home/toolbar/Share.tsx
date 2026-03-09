@@ -51,6 +51,7 @@ export const Share = () => {
     { label: "2天", value: "+2d" },
     { label: "一周", value: "+1w" },
     { label: "一月", value: "+30d" },
+    { label: "永久", value: "" },
   ]
 
   const handler = (name: string) => {
