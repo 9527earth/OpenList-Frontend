@@ -12,12 +12,18 @@ export const useLoading = <T>(
     async (...arg: any[]) => {
       setLoading(true)
       const data = await p(...arg)
-      setLoading(false)
+      if (!fetch || (data as EmptyResp).code !== 401) {
+        // why?
+        // because if setLoading(false) here will rerender before navigate
+        // maybe cause some bugs
+        setLoading(false)
+      }
       return data
     },
   ]
 }
 
+// 配合handleResp使用
 export const useFetch = <T>(
   p: (...arg: any[]) => Promise<T>,
   loading?: boolean,
@@ -36,7 +42,9 @@ const useListLoading = <T, K>(
     async (key: K, ...arg: any[]) => {
       setLoading(() => key)
       const data = await p(key, ...arg)
-      setLoading(undefined)
+      if (!fetch || (data as EmptyResp).code !== 401) {
+        setLoading(undefined)
+      }
       return data
     },
   ]
