@@ -53,7 +53,6 @@ export const ContextMenu = () => {
     const obj = objs[0]
     if (obj.is_dir) return []
     return getPreviews({ ...obj, provider: objStore.provider })
-    // .filter((p) => p.key !== "download")
   })
   return (
     <Menu
@@ -130,7 +129,6 @@ export const ContextMenu = () => {
           const obj = selectedObjs()[0]
           if (!obj) return
           try {
-            // 获取 torrent 文件的下载链接并下载内容
             const link = rawLink(obj, false)
             const resp = await axios.get(link, { responseType: "arraybuffer" })
             const buffer = resp.data as ArrayBuffer
@@ -141,7 +139,6 @@ export const ContextMenu = () => {
             }
             const base64Data = btoa(binary)
 
-            // 调用解析 API
             const parseResp = await torrentParse(base64Data)
             if (parseResp.code === 200) {
               bus.emit("torrent_parsed", {
@@ -179,7 +176,15 @@ export const ContextMenu = () => {
               }
               bus.emit("tool", "package_download")
             } else {
-              batchDownloadSelected()
+              // 关键同步点：单文件下载采用 Mod 版的直接打开直链下载[cite: 1, 2]
+              const url = rawLink(props, true)
+              const a = document.createElement("a")
+              a.href = url
+              a.target = "_blank"
+              a.rel = "noopener noreferrer"
+              document.body.appendChild(a)
+              a.click()
+              document.body.removeChild(a)
             }
           }}
         >
